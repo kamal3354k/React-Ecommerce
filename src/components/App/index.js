@@ -7,7 +7,6 @@ import './index.css';
 const App = () => (
   <div className="content">
     <Products />
-    Hey testing branch
   </div>
 );
 

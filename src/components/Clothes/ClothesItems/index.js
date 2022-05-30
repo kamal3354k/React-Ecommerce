@@ -3,11 +3,15 @@ import React from 'react';
 import { Icon } from 'react-materialize';
 import { Link } from 'react-router-dom';
 //Internals
-import PRODUCTS from '../../Data';
 
+import { ProductConsumer } from '../../TestingContext';
 const ClothesItems = () => (
-  <div className="items">
-    {PRODUCTS.map((product) => {
+  <ProductConsumer>
+   {(Products)=> {
+    return (
+      <div className="items">
+    {Products.map((product) => {
+      console.log(product.category === "clothes")
       if (product.category === "clothes") {
         return(
           <div className="item">
@@ -29,6 +33,8 @@ const ClothesItems = () => (
       }
     })}
   </div>
+    )}}
+  </ProductConsumer>
 )
 
 export default ClothesItems;

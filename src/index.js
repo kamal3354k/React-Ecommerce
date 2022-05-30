@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import ReactDOM from 'react-dom';
 
 import './index.css';
@@ -14,8 +14,12 @@ import Clothes from './components/Clothes';
 import Accessories from './components/Accessories';
 import ShowProduct from './components/ShowProduct';
 import registerServiceWorker from './registerServiceWorker';
+import Products from "./components/Data/index";
+import {ProductProvider} from "./components/TestingContext/index"
 
 ReactDOM.render(
+  <ProductProvider value={Products}>
+    {/* {console.log(Products)} */}
   <BrowserRouter>
     <BaseLayout>
       <Switch>
@@ -29,6 +33,12 @@ ReactDOM.render(
       </Switch>
     </BaseLayout>
   </BrowserRouter>
+  </ProductProvider>
+   
 
 , document.getElementById('root'));
 registerServiceWorker();
+
+
+
+
